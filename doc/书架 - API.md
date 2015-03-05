@@ -79,6 +79,9 @@ JSON
 - `POST` /shelf/books/
 新增 `收藏书籍`
 
+- `POST` /shelf/books/update
+修改 `收藏书籍`信息
+
 - `POST` /shelf/books/delete
 删除 `收藏书籍`
 
@@ -97,6 +100,10 @@ JSON
 - `POST` /shelf/labels/:id/delete
 删除 `标签`
 
+- `GET` /library/[:category]
+`:category` 页面栏目 - index/……
+获取 `书籍`列表
+
 - `POST` /books/
 新增 `书籍`
 
@@ -105,3 +112,9 @@ JSON
 
 - `POST` /books/:id/update
 修改 `书籍`信息
+
+- `POST` /books/:id/reply
+增加 `书籍`评论
+
+- `GET` /search?q=xxx
+获取 搜索结果
