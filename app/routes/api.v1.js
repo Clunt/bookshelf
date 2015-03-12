@@ -2,58 +2,58 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/account', function(req, res, next) {
-  res.render('index', {title: '/account'});
+  res.render('index', {title: 'GET /account'});
 });
 router.post('/account/info', function(req, res, next) {
-  res.render('index', {title: '/account/info'});
+  res.render('index', {title: 'POST /account/info'});
 });
 router.post('/account/password', function(req, res, next) {
-  res.render('index', {title: '/account/password'});
+  res.render('index', {title: 'POST /account/password'});
 });
 router.get('/shelf/books/:id', function(req, res, next) {
-  res.render('index', {title: '/shelf/books/:id'});
+  res.render('index', {title: 'GET /shelf/books/:id'});
 });
 router.post('/shelf/books/', function(req, res, next) {
-  res.render('index', {title: '/shelf/books/'});
+  res.render('index', {title: 'POST /shelf/books/'});
 });
 router.post('/shelf/books/update', function(req, res, next) {
-  res.render('index', {title: '/shelf/books/update'});
+  res.render('index', {title: 'POST /shelf/books/update'});
 });
 router.post('/shelf/books/delete', function(req, res, next) {
-  res.render('index', {title: '/shelf/books/delete'});
+  res.render('index', {title: 'POST /shelf/books/delete'});
 });
 router.get('/shelf/labels/', function(req, res, next) {
-  res.render('index', {title: '/shelf/labels/'});
+  res.render('index', {title: 'GET /shelf/labels/'});
 });
 router.post('/shelf/labels/', function(req, res, next) {
-  res.render('index', {title: '/shelf/labels/'});
+  res.render('index', {title: 'POST /shelf/labels/'});
 });
 router.get('/shelf/labels/:id', function(req, res, next) {
-  res.render('index', {title: '/shelf/labels/:id'});
+  res.render('index', {title: 'GET /shelf/labels/:id'});
 });
 router.post('/shelf/labels/:id/update', function(req, res, next) {
-  res.render('index', {title: '/shelf/labels/:id/update'});
+  res.render('index', {title: 'POST /shelf/labels/:id/update'});
 });
 router.post('/shelf/labels/:id/delete', function(req, res, next) {
-  res.render('index', {title: '/shelf/labels/:id/delete'});
+  res.render('index', {title: 'POST /shelf/labels/:id/delete'});
 });
 router.get('/library/:category', function(req, res, next) {
-  res.render('index', {title: '/library/:category'});
+  res.render('index', {title: 'GET /library/:category'});
 });
 router.post('/books/', function(req, res, next) {
-  res.render('index', {title: '/books/'});
+  res.render('index', {title: 'POST /books/'});
 });
 router.get('/books/:id', function(req, res, next) {
-  res.render('index', {title: '/books/:id'});
+  res.render('index', {title: 'GET /books/:id'});
 });
 router.post('/books/:id/update', function(req, res, next) {
-  res.render('index', {title: '/books/:id/update'});
+  res.render('index', {title: 'POST /books/:id/update'});
 });
 router.post('/books/:id/reply', function(req, res, next) {
-  res.render('index', {title: '/books/:id/reply'});
+  res.render('index', {title: 'POST /books/:id/reply'});
 });
 router.get('/search', function(req, res, next) {
-  res.render('index', {title: '/search?q=xxx'});
+  res.render('index', {title: 'GET /search?q=xxx'});
 });
 
 module.exports = router;
