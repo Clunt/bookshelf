@@ -6,7 +6,7 @@ var UserSchema = new Schema({
   email: { type: String},
   password: { type: String },
   nickname: { type: String },
-  regdate: { type: Date, default: Date.now }
+  create_at: { type: Date, default: Date.now }
 });
 
 mongoose.model('User', UserSchema);

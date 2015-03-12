@@ -1,5 +1,17 @@
 var express = require('express');
+var sign    = require('../api/v1/sign');
+var account = require('../api/v1/account');
+var shelf   = require('../api/v1/shelf');
+var library = require('../api/v1/library');
+var book    = require('../api/v1/book');
+
 var router = express.Router();
+
+
+router.post('/signup', sign.signup);
+router.post('/signin', sign.signin);
+
+
 
 router.get('/account', function(req, res, next) {
   res.render('index', {title: 'GET /account'});

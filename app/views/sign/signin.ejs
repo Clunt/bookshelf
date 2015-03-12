@@ -6,12 +6,14 @@
 </head>
 <body>
   <h1>登陆</h1>
-  <form action="/api/signin" method="POST">
+  <form action="/api/v1/signin" method="POST">
     <label for="email">登陆</label>
-    <input id="email" name="email" type="email" value="">
+    <input id="email" name="email" type="text" value="">
     <br>
-    <label for="passowrd">密码</label>
-    <input id="passowrd" name="passowrd" type="password" value="">
+    <label for="password">密码</label>
+    <input id="password" name="password" type="password" value="">
+    <br>
+    <label><input name="expires" type="checkbox">自动登录</label>
     <br>
     <input type="submit" value="登陆">
   </form>

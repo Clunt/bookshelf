@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var session      = require('express-session');
 var bodyParser   = require('body-parser');
 
+var auth = require('./middlewares/auth')
 var app = express();
 
 // 设置模板引擎
@@ -25,8 +26,8 @@ app.use(session({
 // 配置静态资源
 app.use('/static', express.static(path.join(__dirname, 'static')));
 // 配置路由
-app.use('/', require('./routes/index'));
-app.use('/api/v1', require('./routes/api.v1'));
+app.use('/', auth.authLogin, require('./routes/index'));
+app.use('/api/v1', auth.authLogin, require('./routes/api.v1'));
 // 错误处理
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
