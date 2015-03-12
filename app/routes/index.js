@@ -1,39 +1,30 @@
 var express = require('express');
+var site    = require('../controllers/site');
+var sign    = require('../controllers/sign');
+var account = require('../controllers/account');
+var shelf   = require('../controllers/shelf');
+var library = require('../controllers/library');
+var book    = require('../controllers/book');
+
 var router = express.Router();
 
-
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-router.get('/account', function(req, res, next) {
-  res.render('index', { title: 'account' });
-});
-router.get('/account/manage', function(req, res, next) {
-  res.render('index', { title: 'account manage' });
-});
-router.get('/shelf/', function(req, res, next) {
-  res.render('index', { title: 'shelf' });
-});
-router.get('/shelf/:id', function(req, res, next) {
-  res.render('index', { title: 'shelf ' + req.params.id });
-});
-router.get('/shelf/manage', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-router.get('/library/', function(req, res, next) {
-  res.render('index', { title: 'library' });
-});
-router.get('/library/:id', function(req, res, next) {
-  res.render('index', { title: 'library ' + req.params.id });
-});
-router.get('/books/', function(req, res, next) {
-  res.render('index', { title: 'books' });
-});
-router.get('/books/:id', function(req, res, next) {
-  res.render('index', { title: 'books ' + req.params.id });
-});
-router.get('/books/:id/update', function(req, res, next) {
-  res.render('index', { title: 'books ' + req.params.id + ' update' });
-});
+// 基本路由
+router.get('/', site.index);
+router.get('/signup', sign.signup);
+router.get('/signin', sign.signin);
+router.get('/signout', sign.signout);
+// Account
+router.get('/account', account.show);
+router.get('/account/manage', account.manage);
+// Shelf
+router.get('/shelf', shelf.index);
+router.get('/shelf/:id', shelf.tag);
+router.get('/shelf/manage', shelf.manage);
+// Library
+router.get('/library', library.index);
+// Books
+router.get('/books/add', book.add);
+router.get('/books/:id', book.book);
+router.get('/books/:id/update', book.update);
 
 module.exports = router;
