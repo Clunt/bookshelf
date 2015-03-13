@@ -4,6 +4,5 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
-# Ignore OS Files
 .DS_Store
-#/app/node_modules
+/app/node_modules
