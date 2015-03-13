@@ -6,5 +6,26 @@
 </head>
 <body>
   <h1>Book - Add</h1>
+  <form action="/api/v1/books/add" method="POST">
+    <label for="title">title: </label>
+    <input id="title" type="text" name="title" value="">
+    <br>
+    <label for="author">author: </label>
+    <input id="author" type="text" name="author" value="">
+    <br>
+    <label for="intro">intro: </label>
+    <input id="intro" type="text" name="intro" value="">
+    <br>
+    <label for="ISBN">ISBN: </label>
+    <input id="ISBN" type="text" name="ISBN" value="">
+    <br>
+    <label for="status">status: </label>
+    <input id="status" type="text" name="status" value="">
+    <br>
+    <label for="public_date">public_date: </label>
+    <input id="public_date" type="text" name="public_date" value="">
+    <br>
+    <input type="submit" value="确定">
+  </form>
 </body>
 </html>

@@ -11,8 +11,10 @@ var router = express.Router();
 // 基本路由
 router.get('/', site.index);
 router.get('/signup', sign.signup);
-router.get('/signin', sign.signin);
+router.get('/signin', sign.showSignin);
+router.post('/signin', sign.signin);
 router.get('/signout', sign.signout);
+
 // Account
 router.get('/account', account.show);
 router.get('/account/manage', account.manage);

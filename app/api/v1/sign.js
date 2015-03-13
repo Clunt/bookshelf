@@ -24,30 +24,3 @@ exports.signup = function (req, res, next) {
     });
   });
 };
-
-exports.signin = function (req, res, next) {
-  var email = req.body.email;
-  var password = req.body.password;
-  var expires = req.body.expires;
-  User.getUserByEmail(email, function (err, user) {
-    if (err) {
-      return next(err);
-    }
-    if (!user) {
-      res.send('用户不存在');
-      return;
-    }
-    req.session.user = user;
-    var auth_token = user.email + '\t' + user.password;
-    if ('on' === expires) {
-      res.cookie('BSSS', auth_token, {path: '/', maxAge: 630720000000});// 20 Years
-    } else {
-      res.cookie('BSSS', auth_token, {path: '/'});
-    }
-    res.send('登陆成功');
-  });
-};
-
-
-
-

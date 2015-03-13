@@ -1,7 +1,11 @@
-exports.show = function(req, res, next) {
+exports.info = function(req, res, next) {
   res.render('account/index');
 };
 
-exports.manage = function(req, res, next) {
+exports.updateInfo = function(req, res, next) {
+  res.render('account/index');
+};
+
+exports.updatePassword = function(req, res, next) {
   res.render('account/manage');
 };
