@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Shelf - Manage</title>
+  <title>Shelf - Tags</title>
 </head>
 <body>
-  <h1>Shelf - Manage</h1>
+  <h1>Shelf - Tags</h1>
+  <% for(var i = 0; i < tags.length; i++) {%>
+    <li>
+      <%= tags[i] %>
+      <form action="/api/v1/tags/delete" method="POST" target="_blank">
+        <input type="hidden" name="id" value="<%= tags[i]['_id'] %>">
+        <input type="submit" value="移除Tag">
+      </form>
+      <a href="/shelf/tags/<%= tags[i]['_id'] %>" target="_blank">Basic</a>
+      <a href="/api/v1/tags/<%= tags[i]['_id'] %>" target="_blank">Api</a>
+      <a href="/shelf/tags/<%= tags[i]['_id'] %>/update" target="_blank">Update</a>
+      <br><br>
+    </li>
+  <% } %>
+  </ul>
 </body>
 </html>

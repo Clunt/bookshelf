@@ -20,8 +20,11 @@ router.get('/account', account.show);
 router.get('/account/manage', account.manage);
 // Shelf
 router.get('/shelf', shelf.index);
-router.get('/shelf/:id', shelf.tag);
-router.get('/shelf/manage', shelf.manage);
+router.get('/shelf/tags', shelf.manage);
+router.get('/shelf/tags/add', shelf.manageTagAdd);
+router.get('/shelf/tags/:tag_id', shelf.manageTagInfo);
+router.get('/shelf/tags/:tag_id/update', shelf.manageTagUpdate);
+router.get('/shelf/:tag_id', shelf.indexTag);
 // Library
 router.get('/library', library.index);
 // Books

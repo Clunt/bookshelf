@@ -12,12 +12,12 @@ require('./user');
 require('./tag');
 require('./book');
 require('./reply');
-require('./bookper');
+require('./shelf');
 
 exports.User  = mongoose.model('User');
 exports.Book  = mongoose.model('Book');
 exports.Tag   = mongoose.model('Tag');
 exports.Reply = mongoose.model('Reply');
-exports.Bookper = mongoose.model('Bookper');
+exports.Shelf = mongoose.model('Shelf');
 
 

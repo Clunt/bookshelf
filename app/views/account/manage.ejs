@@ -6,5 +6,17 @@
 </head>
 <body>
   <h1>个人信息 - 管理</h1>
+  <h2>更改昵称</h2>
+  <form action="/api/v1/account/info" method="POST">
+    <label for="nickname">昵称</label><input id="nickname" type="text" name="nickname" value="">
+    <br>
+    <input type="submit" value="确定">
+  </form>
+  <h2>更改密码</h2>
+  <form action="/api/v1/account/password" method="POST">
+    <label for="password">昵称</label><input id="password" type="text" name="password" value="">
+    <br>
+    <input type="submit" value="确定">
+  </form>
 </body>
 </html>
