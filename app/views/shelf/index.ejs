@@ -6,5 +6,21 @@
 </head>
 <body>
   <h1>Shelf - Index</h1>
+  <ul>
+  <% for(var i = 0; i < books.length; i++) {%>
+    <li>
+      <%= books[i]['_id'] %>
+      <form action="/api/v1/shelf/delete" method="POST" target="_blank">
+        <input type="hidden" name="id" value="<%= books[i]['_id'] %>">
+        <input type="submit" value="从书架中移除">
+      </form>
+      <a href="/books/<%= books[i]['book_id'] %>" target="_blank">Basic</a>
+      <a href="/api/v1/books/<%= books[i]['book_id'] %>" target="_blank">Api</a>
+      <a href="/shelf/<%= books[i]['_id'] %>/update" target="_blank">Update</a>
+      <%= books[i] %>
+      <br><br>
+    </li>
+  <% } %>
+  </ul>
 </body>
 </html>

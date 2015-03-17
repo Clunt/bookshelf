@@ -24,7 +24,8 @@ router.get('/shelf/tags', shelf.manage);
 router.get('/shelf/tags/add', shelf.manageTagAdd);
 router.get('/shelf/tags/:tag_id', shelf.manageTagInfo);
 router.get('/shelf/tags/:tag_id/update', shelf.manageTagUpdate);
-router.get('/shelf/:tag_id', shelf.indexTag);
+router.get('/shelf/:tag_id', shelf.index);
+router.get('/shelf/:shelf_id/update', shelf.shelfUpdate);
 // Library
 router.get('/library', library.index);
 // Books

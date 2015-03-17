@@ -6,16 +6,18 @@
 </head>
 <body>
   <h1>Shelf - Tags</h1>
+  <ul>
   <% for(var i = 0; i < tags.length; i++) {%>
     <li>
-      <%= tags[i] %>
-      <form action="/api/v1/tags/delete" method="POST" target="_blank">
-        <input type="hidden" name="id" value="<%= tags[i]['_id'] %>">
+      <%= tags[i]['title'] %>
+      <form action="/api/v1/tags/<%= tags[i]['_id'] %>/delete" method="POST" target="_blank">
         <input type="submit" value="移除Tag">
       </form>
+      <a href="/shelf/<%= tags[i]['_id'] %>" target="_blank">Shelf Tag</a>
       <a href="/shelf/tags/<%= tags[i]['_id'] %>" target="_blank">Basic</a>
       <a href="/api/v1/tags/<%= tags[i]['_id'] %>" target="_blank">Api</a>
       <a href="/shelf/tags/<%= tags[i]['_id'] %>/update" target="_blank">Update</a>
+      <%= tags[i] %>
       <br><br>
     </li>
   <% } %>

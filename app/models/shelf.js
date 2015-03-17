@@ -5,8 +5,9 @@ var ObjectId = Schema.ObjectId;
 
 var ShelfSchema = new Schema({
   content: { type: String },
-  tag_id: { type: ObjectId },
-  book_id: { type: ObjectId }
+  user_id: { type: ObjectId },
+  book_id: { type: ObjectId },
+  tags: { type: Array }
 });
 
 mongoose.model('Shelf', ShelfSchema);

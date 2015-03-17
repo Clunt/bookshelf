@@ -2,14 +2,14 @@ var Tag = require('../../proxy').Tag;
 
 
 exports.tagInfo = function(req, res, next) {
-  Tag.Tag({
+  Tag.getTagByUTID({
     uid: req.session.user._id,
-    title: req.body.title
-  }, function(err) {
+    tid: req.params.tag_id
+  }, function(err, tag) {
     if (err) {
       return res.send('Error');
     }
-    res.send('添加成功')
+    res.json(tag);
   });
 };
 
@@ -28,7 +28,7 @@ exports.tagAdd = function(req, res, next) {
 exports.tagUpdate = function(req, res, next) {
   Tag.updateTag({
     uid: req.session.user._id,
-    tid: req.body.id,
+    tid: req.params.tag_id,
     title: req.body.title
   }, function(err) {
     if (err) {
@@ -41,11 +41,15 @@ exports.tagUpdate = function(req, res, next) {
 exports.tagDelete = function(req, res, next) {
   Tag.deleteTag({
     uid: req.session.user._id,
-    tid: req.body.id
-  }, function(err) {
+    tid: req.params.tag_id
+  }, function(err, rows) {
     if (err) {
       return res.send('Error');
     }
-    res.send('更新成功')
+    if (1 === rows) {
+      res.send('删除成功');
+    } else {
+      res.send('删除失败');
+    }
   });
 };

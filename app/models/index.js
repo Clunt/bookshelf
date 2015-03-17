@@ -19,5 +19,3 @@ exports.Book  = mongoose.model('Book');
 exports.Tag   = mongoose.model('Tag');
 exports.Reply = mongoose.model('Reply');
 exports.Shelf = mongoose.model('Shelf');
-
-

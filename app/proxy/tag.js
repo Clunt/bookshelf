@@ -3,8 +3,8 @@ var Tag = models.Tag;
 
 exports.getTagByUTID = function (opt, callback) {
   Tag.findOne({
-    user_id: uid,
-    _id: tid
+    user_id: opt.uid,
+    _id: opt.tid
   }, callback);
 };
 
@@ -23,12 +23,12 @@ exports.updateTag = function (opt, callback) {
   Tag.findOne({
     user_id: opt.uid,
     _id: opt.tid
-  }, function(err, Tag) {
-    if (err || !Tag) {
+  }, function(err, tag) {
+    if (err || !tag) {
       return callback(err);
     }
-    Tag.title = opt.title;
-    Tag.save(callback);
+    tag.title = opt.title;
+    tag.save(callback);
   });
 };
 
