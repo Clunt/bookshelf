@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Shelf</title>
+</head>
+<body>
+  <h1>Update Shelf</h1>
+  <form action="/api/v1/shelf/update" method="POST" target="_blank">
+    <input type="hidden" name="id" value="<%= shelf_id %>">
+    <label for="content">Content</label><br>
+    <textarea id="content" type="text" name="content" value=""></textarea><br>
+    Tag
+    <ul>
+      <% for(var i = 0; i < tags.length; i++) {%>
+        <li>
+          <label for="checkbox-<%= i %>">
+            <input id="checkbox-<%= i %>" type="checkbox" name="tags" value="<%= tags[i]['_id'] %>" <% if(tags[i]['checked']) { %>checked<% } %>>
+            <%= tags[i]['title'] %>
+          </label>
+        </li>
+      <% } %>
+    </ul>
+    <input type="submit">
+  </form>
+</body>
+</html>
